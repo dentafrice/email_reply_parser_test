@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+if [ ! -d "env" ]; then
+    echo "Could not find Python env. Have you ran bootstrap.sh?"
+    exit 1
+fi
+
+if [ ! -d "vendor/" ]; then
+    echo "Could not find Go vendor directory. Have you ran bootstrap.sh?"
+    exit 1
+fi
+
+source env/bin/activate
+
 TMPDIR=$(mktemp -d)
 trap "rm -rf $TMPDIR" EXIT
 
