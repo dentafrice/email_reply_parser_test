@@ -5,7 +5,7 @@ if [ ! -d "env" ]; then
     exit 1
 fi
 
-if [ ! -d "vendor/" ]; then
+if [ ! -d "vendor" ]; then
     echo "Could not find Go vendor directory. Have you ran bootstrap.sh?"
     exit 1
 fi
